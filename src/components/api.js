@@ -21,3 +21,9 @@ export async function apiSearchMovies(query, page) {
 
   return data.data;
 }
+
+export async function apiMoviesById(id) {
+  const data = await axios.get(`${URL}/movie/${id}?api_key=${KEY}`);
+
+  return data.data;
+}

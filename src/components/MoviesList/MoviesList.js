@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import getApi from "../api";
+import { useParams } from "react-router-dom";
+// import getApi from "../api";
 import {
   MoviesItems,
   MoviesMenu,
@@ -11,18 +12,11 @@ import {
   RatingIcon,
   RatingWrapper,
 } from "./MoviesList.styled.js";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+// import { apiMoviesById } from "../api";
 
-export default function MoviesList() {
-  const [trending, setTrending] = useState([]);
-
-  useEffect(() => {
-    async function api() {
-      const data = await getApi();
-      setTrending(data.results);
-    }
-    api();
-  }, []);
+export default function MoviesList({ movies }) {
+  const location = useLocation();
 
   function formatNumber(number) {
     if (number % 1 === 0) {
@@ -34,9 +28,9 @@ export default function MoviesList() {
 
   return (
     <MoviesMenu>
-      {trending.map((item) => (
+      {movies.map((item) => (
         <MoviesItems key={item.id}>
-          <Link>
+          <Link to={`/movies/${item.id}`} state={{ from: location }}>
             <MoviesWrap>
               <MoviesTextWrap>
                 <RatingWrapper>

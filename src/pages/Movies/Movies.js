@@ -2,7 +2,7 @@ import { Container, MoviesContainer } from "../Movies/Movies.styled";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import { useEffect, useState } from "react";
 import { apiSearchMovies } from "../../components/api";
-import SearchedMovies from "../../components/SearchedMovies/SearchedMovies";
+import MoviesList from "../../components/MoviesList/MoviesList";
 import toast, { Toaster } from "react-hot-toast";
 import Button from "../../components/ButtonLoadMore/Button";
 import Loader from "../../components/Loader/Loader";
@@ -57,7 +57,7 @@ export default function Movies() {
       <SearchBar onSearch={getSearchMovies} />
       {movies.length > 0 && (
         <MoviesContainer>
-          <SearchedMovies movies={movies} />
+          <MoviesList movies={movies} />
         </MoviesContainer>
       )}
       {movies.length > 1 && <Button onClick={onLoadMoreClick} />}

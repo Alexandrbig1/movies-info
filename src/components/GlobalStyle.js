@@ -29,6 +29,16 @@ p {
     margin: 0;
     padding: 0;
   }
+  
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  h4 {
+    margin: 0;
+    padding: 0;
+  }
 
   ul {
     list-style: none;

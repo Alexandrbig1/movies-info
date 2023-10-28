@@ -3,15 +3,18 @@ import {
   SearchWrapper,
   SearchButton,
   Icon,
+  SearchForm,
 } from "./SearchBar.styled";
 
-export default function SearchBar() {
+export default function SearchBar({ onSearch }) {
   return (
     <SearchWrapper>
-      <SearchInput placeholder="Search Movie" />
-      <SearchButton>
-        <Icon /> Search
-      </SearchButton>
+      <SearchForm onSubmit={onSearch}>
+        <SearchInput name="search" type="text" placeholder="Search Movie" />
+        <SearchButton type="submit">
+          <Icon /> Search
+        </SearchButton>
+      </SearchForm>
     </SearchWrapper>
   );
 }

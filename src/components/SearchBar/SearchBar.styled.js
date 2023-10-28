@@ -3,6 +3,9 @@ import { BiSearchAlt } from "react-icons/bi";
 
 export const SearchWrapper = styled.div`
   padding: 0.4rem 2.4rem;
+`;
+
+export const SearchForm = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,7 +47,7 @@ export const SearchButton = styled.button`
   padding: 1.2rem 2.4rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  background-color: #b1b1b1;
+  background-color: ${(p) => p.theme.colors.btnBgColor};
   color: ${(p) => p.theme.colors.darkBgColor};
   /* color: ${(p) => p.theme.colors.lightTextColor}; */
   font-family: Arial, Helvetica, sans-serif;
@@ -54,7 +57,7 @@ export const SearchButton = styled.button`
   transition: 0.4s ease-in-out;
 
   &:hover {
-    background-color: #dadada;
+    background-color: ${(p) => p.theme.colors.btnBgHoverColor};
   }
 `;
 

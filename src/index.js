@@ -12,6 +12,8 @@ const theme = {
     lightTextColor: "#f8f9fa",
     moviesWrapDarkColor: "#5c5c5c",
     accent: "#ffba08",
+    btnBgColor: "#b1b1b1",
+    btnBgHoverColor: "#dadada",
   },
 };
 

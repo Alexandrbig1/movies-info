@@ -13,3 +13,11 @@ export default async function getApi() {
 
   return data.data;
 }
+
+export async function apiSearchMovies(query, page) {
+  const data = await axios.get(
+    `${URL}/search/movie?api_key=${KEY}&query=${query}&page=${page}`
+  );
+
+  return data.data;
+}

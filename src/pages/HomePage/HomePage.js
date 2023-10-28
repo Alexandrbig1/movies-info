@@ -1,4 +1,8 @@
-import { MoviesContainer, MoviesTitle, Container } from "./HomePage.styled";
+import {
+  MoviesContainer,
+  MoviesTitle,
+  Container,
+} from "../HomePage/HomePage.styled";
 import MoviesList from "../../components/MoviesList/MoviesList";
 
 export default function HomePage() {

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FaStar } from "react-icons/fa";
 
-export const MoviesMenu = styled.ul`
+export const SearchedMoviesMenu = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -10,7 +10,7 @@ export const MoviesMenu = styled.ul`
   padding: 1.2rem 2.4rem;
 `;
 
-export const MoviesItems = styled.li`
+export const SearchedMoviesItems = styled.li`
   border-radius: 0.4rem;
   overflow: hidden;
 
@@ -21,8 +21,7 @@ export const MoviesItems = styled.li`
   }
 `;
 
-export const MoviesWrap = styled.div`
-  /* background-color: ${(p) => p.theme.colors.darkBgColor}; */
+export const SearchedMoviesWrap = styled.div`
   background-color: ${(p) => p.theme.colors.moviesWrapDarkColor};
 
   border-radius: 0.4rem;
@@ -40,16 +39,15 @@ export const MoviesWrap = styled.div`
   }
 `;
 
-export const MoviesTextWrap = styled.div`
+export const SearchedMoviesTextWrap = styled.div`
   padding: 2.4rem;
   display: flex;
+  justify-content: start;
   flex-direction: column;
   gap: 1rem;
-  /* align-items: center; */
-  justify-content: start;
 `;
 
-export const MoviesTextTitle = styled.span`
+export const SearchedMoviesTextTitle = styled.span`
   color: ${(p) => p.theme.colors.lightTextColor};
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
@@ -61,11 +59,9 @@ export const MoviesTextTitle = styled.span`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  /* border-bottom: 1px solid transparent; */
 
   &:hover {
     text-decoration: underline;
-    /* border-bottom: 1px solid #050505; */
   }
 
   @media (max-width: 520px) {
@@ -73,12 +69,12 @@ export const MoviesTextTitle = styled.span`
   }
 `;
 
-export const MoviesImg = styled.img`
+export const SearchedMoviesImg = styled.img`
   width: 100%;
   height: 100%;
 `;
 
-export const Rating = styled.span`
+export const SearchedRating = styled.span`
   color: ${(p) =>
     p.value !== 0 ? p.theme.colors.white : p.theme.colors.btnBgColor};
   font-size: 1.6rem;
@@ -87,13 +83,13 @@ export const Rating = styled.span`
   line-height: 1.25;
 `;
 
-export const RatingIcon = styled(FaStar)`
+export const SearchedRatingIcon = styled(FaStar)`
   color: ${(p) =>
     p.value !== 0 ? p.theme.colors.accent : p.theme.colors.btnBgColor};
   font-size: 1.6rem;
 `;
 
-export const RatingWrapper = styled.div`
+export const SearchedRatingWrapper = styled.div`
   display: flex;
   gap: 0.8rem;
   align-items: center;

@@ -34,6 +34,10 @@ export const Link = styled(NavLink)`
     background-color: #343a40;
     border-radius: 0.4rem;
   }
+
+  @media (max-width: 400px) {
+    padding: 1.2rem;
+  }
 `;
 
 export const Logo = styled(BiCameraMovie)`

@@ -10,6 +10,11 @@ export const SearchForm = styled.form`
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
+
+  @media (max-width: 385px) {
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 
 export const SearchInput = styled.input`
@@ -34,6 +39,10 @@ export const SearchInput = styled.input`
 
   &:focus-within {
     box-shadow: inset 0 0 0.2rem 0.3rem rgba(255, 186, 8, 0.5);
+  }
+
+  @media (max-width: 385px) {
+    width: 100%;
   }
 `;
 

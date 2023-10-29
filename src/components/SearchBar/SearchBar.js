@@ -6,11 +6,18 @@ import {
   SearchForm,
 } from "./SearchBar.styled";
 
-export default function SearchBar({ onSearch }) {
+export default function SearchBar({ onSearch, onChange, value }) {
   return (
     <SearchWrapper>
       <SearchForm onSubmit={onSearch}>
-        <SearchInput name="search" type="text" placeholder="Search Movie" />
+        <SearchInput
+          name="search"
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
+          // onChange={(e) => setSearchParams({ query: e.target.value })}
+          type="text"
+          placeholder="Search Movie"
+        />
         <SearchButton type="submit">
           <Icon /> Search
         </SearchButton>

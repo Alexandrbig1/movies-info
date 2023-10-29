@@ -6,6 +6,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import toast, { Toaster } from "react-hot-toast";
 import Button from "../../components/ButtonLoadMore/Button";
 import Loader from "../../components/Loader/Loader";
+import { useSearchParams } from "react-router-dom";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
@@ -13,6 +14,8 @@ export default function Movies() {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const query = searchParams.get("query") ?? "";
 
   async function getSearchMovies(e) {
     e.preventDefault();
@@ -52,9 +55,18 @@ export default function Movies() {
     searchMovie();
   }, [search, page]);
 
+  function updateQueryString(query) {
+    const searchedMovie = query !== "" ? { query } : {};
+    setSearchParams(searchedMovie);
+  }
+
   return (
     <Container>
-      <SearchBar onSearch={getSearchMovies} />
+      <SearchBar
+        value={query}
+        onChange={updateQueryString}
+        onSearch={getSearchMovies}
+      />
       {movies.length > 0 && (
         <MoviesContainer>
           <MoviesList movies={movies} />

@@ -27,3 +27,14 @@ export async function apiMoviesById(id) {
 
   return data.data;
 }
+
+export async function apiMoviesCast(id) {
+  const data = await axios.get(`${URL}/movie/${id}/credits?api_key=${KEY}`);
+
+  return data.data;
+}
+export async function apiMoviesReviews(id) {
+  const data = await axios.get(`${URL}/movie/${id}/reviews?api_key=${KEY}`);
+
+  return data.data;
+}

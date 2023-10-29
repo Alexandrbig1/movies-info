@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { BsArrowLeft, BsArrowDownShort } from "react-icons/bs";
 
 export const DetailsContainer = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2.4rem;
+  align-items: start;
+  padding: 4.8rem 2.4rem;
   background: linear-gradient(to bottom, #e9ecef 10%, #343a40);
 `;
 
 export const DetailsCard = styled.div`
+  position: relative;
   display: flex;
   width: 60%;
   gap: 2.4rem;
@@ -109,4 +112,80 @@ export const DetailsRating = styled.span`
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   line-height: 1.25;
+`;
+
+export const BackLinkWrapper = styled.button`
+  position: absolute;
+  top: -3.4rem;
+  left: 2.4rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  /* padding: 1rem 2rem; */
+  /* border-radius: 1.2rem; */
+  cursor: pointer;
+  color: ${(p) => p.theme.colors.white};
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  &:hover {
+    border-bottom: 0.1rem solid #000;
+  }
+`;
+
+export const BackLink = styled(Link)`
+  color: ${(p) => p.theme.colors.moviesWrapDarkColor};
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.25;
+`;
+
+export const BackArrow = styled(BsArrowLeft)`
+  font-size: 1.6rem;
+  color: ${(p) => p.theme.colors.darkBgColor};
+`;
+
+export const CastIcon = styled(BsArrowDownShort)`
+  font-size: 1.6rem;
+  transition: 0.3s;
+`;
+
+export const CastLink = styled(Link)`
+  border: none;
+  outline: none;
+  /* background-color: ${(p) => p.theme.colors.btnBgColor}; */
+  /* color: ${(p) => p.theme.colors.darkBgColor}; */
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+
+  color: #050505;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  /* border-bottom: 0.1rem solid #000; */
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  width: 9rem;
+
+  &:hover {
+    & > ${CastIcon} {
+      color: ${(p) => p.theme.colors.accent};
+    }
+  }
+`;
+
+export const CastMenu = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+`;
+
+export const CastItems = styled.li`
+  width: 100%;
 `;

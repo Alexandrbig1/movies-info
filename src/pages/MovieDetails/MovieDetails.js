@@ -11,12 +11,19 @@ import {
   MovieDetailsText,
   TextWrapper,
   DetailsRating,
+  BackLinkWrapper,
+  BackLink,
+  BackArrow,
+  CastLink,
+  CastMenu,
+  CastIcon,
+  CastItems,
 } from "./MovieDetails.styled";
 import {
   RatingWrapper,
   RatingIcon,
 } from "../../components/MoviesList/MoviesList.styled";
-import { useLocation, useParams } from "react-router-dom";
+import { useLocation, useParams, Outlet } from "react-router-dom";
 import { apiMoviesById } from "../../components/api";
 import StarRating from "../../components/StarRating/StarRating";
 
@@ -24,6 +31,7 @@ export default function Details() {
   const { movieId } = useParams();
   const location = useLocation();
   const [movies, setMovies] = useState([]);
+  const backLinkHref = location.state?.from ?? "/movies";
 
   useEffect(() => {
     async function getMoviesById() {
@@ -42,12 +50,23 @@ export default function Details() {
     }
   }
 
-  const { title, genres, overview, release_date, poster_path, vote_average } =
-    movies;
+  const {
+    title,
+    genres,
+    overview,
+    release_date,
+    poster_path,
+    vote_average,
+    id,
+  } = movies;
   return (
     <DetailsContainer>
       <DetailsCard>
         <>
+          <BackLinkWrapper>
+            <BackArrow />
+            <BackLink to={backLinkHref}>Back to movies</BackLink>
+          </BackLinkWrapper>
           <Img
             src={
               poster_path
@@ -93,6 +112,21 @@ http://image.tmdb.org/t/p/w200${poster_path}`
             <DetailsGenre>Overview:</DetailsGenre>
             <MovieDetailsText>{overview}</MovieDetailsText>
           </TextWrapper>
+          <CastMenu>
+            <CastItems>
+              <CastLink to={`/movies/${id}/cast`}>
+                Cast
+                <CastIcon />
+              </CastLink>
+            </CastItems>
+            <CastItems>
+              <CastLink to={`/movies/${id}/reviews`}>
+                Reviews
+                <CastIcon />
+              </CastLink>
+            </CastItems>
+          </CastMenu>
+          <Outlet />
         </DetailsTextWrapper>
       </DetailsCard>
     </DetailsContainer>

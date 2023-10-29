@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { Suspense } from "react";
 import {
   Nav,
   Header,
@@ -8,7 +9,6 @@ import {
   LogoText,
   LogoSpan,
 } from "./Layout/Layout.styled";
-import { Suspense } from "react";
 
 export default function Layout() {
   return (
@@ -27,7 +27,7 @@ export default function Layout() {
         </Nav>
       </Header>
       <main>
-        <Suspense fallback={"Loading page..."}>
+        <Suspense fallback={<div>Loading page...</div>}>
           <Outlet />
         </Suspense>
       </main>

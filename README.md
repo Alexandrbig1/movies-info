@@ -7,7 +7,7 @@ doing homework while studying in bootcamp @GoIT on Fullstack developer course
 
 Refactored from classes to hooks
 You can find any pictures on search bar
-React module(states/hooks/RestAPI/props/forms/libraries/modernNormalize/styledComponents/ReactLoaderSpinner/axios/ReactHotToast/)
+React module(params/location/routes/route/sharedlayout/states/hooks/RestAPI/props/libraries/modernNormalize/styledComponents/ReactLoaderSpinner/axios/ReactHotToast/ReactIcons...)
 
 ## Languages and Tools:
 <div align="center">  

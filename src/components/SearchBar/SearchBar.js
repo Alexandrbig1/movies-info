@@ -14,7 +14,6 @@ export default function SearchBar({ onSearch, onChange, value }) {
           name="search"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          // onChange={(e) => setSearchParams({ query: e.target.value })}
           type="text"
           placeholder="Search Movie"
         />

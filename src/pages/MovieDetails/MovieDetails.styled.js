@@ -40,7 +40,6 @@ export const DetailsTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.4rem;
-  /* width: 48rem; */
 `;
 
 export const Img = styled.img`
@@ -48,7 +47,6 @@ export const Img = styled.img`
   height: 100%;
   width: 24rem;
   height: 36rem;
-  /* height: auto; */
 `;
 
 export const DetailsTitle = styled.h2`
@@ -88,7 +86,7 @@ export const Genre = styled.span`
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.4; /* 140% */
+  line-height: 1.4;
 `;
 
 export const MovieDetailsText = styled.p`
@@ -121,8 +119,6 @@ export const BackLinkWrapper = styled.button`
   border: none;
   outline: none;
   background-color: transparent;
-  /* padding: 1rem 2rem; */
-  /* border-radius: 1.2rem; */
   cursor: pointer;
   color: ${(p) => p.theme.colors.white};
   display: flex;
@@ -155,8 +151,6 @@ export const CastIcon = styled(BsArrowDownShort)`
 export const CastLink = styled(Link)`
   border: none;
   outline: none;
-  /* background-color: ${(p) => p.theme.colors.btnBgColor}; */
-  /* color: ${(p) => p.theme.colors.darkBgColor}; */
   cursor: pointer;
   transition: 0.4s ease-in-out;
 
@@ -167,7 +161,6 @@ export const CastLink = styled(Link)`
   font-weight: 600;
   line-height: 1.2;
   text-transform: uppercase;
-  /* border-bottom: 0.1rem solid #000; */
   display: flex;
   align-items: center;
   gap: 0.2rem;

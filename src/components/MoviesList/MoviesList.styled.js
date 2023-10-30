@@ -22,7 +22,6 @@ export const MoviesItems = styled.li`
 `;
 
 export const MoviesWrap = styled.div`
-  /* background-color: ${(p) => p.theme.colors.darkBgColor}; */
   background-color: ${(p) => p.theme.colors.moviesWrapDarkColor};
 
   border-radius: 0.4rem;

@@ -22,7 +22,6 @@ export const SearchInput = styled.input`
   width: 36rem;
   border: none;
   outline: none;
-  /* outline: inset #dadada; */
   border: 1px solid #dadada;
   transition: 0.4s;
 
@@ -58,7 +57,6 @@ export const SearchButton = styled.button`
   cursor: pointer;
   background-color: ${(p) => p.theme.colors.btnBgColor};
   color: ${(p) => p.theme.colors.darkBgColor};
-  /* color: ${(p) => p.theme.colors.lightTextColor}; */
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.8rem;
   font-weight: 500;

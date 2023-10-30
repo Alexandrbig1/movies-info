@@ -1,4 +1,8 @@
 import { useEffect, useState } from "react";
+import { useLocation, useParams, Outlet } from "react-router-dom";
+import { apiMoviesById } from "../../components/api";
+import StarRating from "../../components/StarRating/StarRating";
+import toast, { Toaster } from "react-hot-toast";
 import {
   DetailsContainer,
   DetailsCard,
@@ -10,7 +14,6 @@ import {
   Genre,
   MovieDetailsText,
   TextWrapper,
-  DetailsRating,
   BackLinkWrapper,
   BackLink,
   BackArrow,
@@ -19,13 +22,6 @@ import {
   CastIcon,
   CastItems,
 } from "./MovieDetails.styled";
-import {
-  RatingWrapper,
-  RatingIcon,
-} from "../../components/MoviesList/MoviesList.styled";
-import { useLocation, useParams, Outlet } from "react-router-dom";
-import { apiMoviesById } from "../../components/api";
-import StarRating from "../../components/StarRating/StarRating";
 
 export default function Details() {
   const { movieId } = useParams();
@@ -35,9 +31,12 @@ export default function Details() {
 
   useEffect(() => {
     async function getMoviesById() {
-      const movie = await apiMoviesById(movieId);
-      console.log(movie);
-      setMovies(movie);
+      try {
+        const movie = await apiMoviesById(movieId);
+        setMovies(movie);
+      } catch (error) {
+        toast.error("Oops, something went wrong! Reload this page!");
+      }
     }
     getMoviesById();
   }, [movieId, setMovies]);
@@ -129,6 +128,7 @@ http://image.tmdb.org/t/p/w200${poster_path}`
           <Outlet />
         </DetailsTextWrapper>
       </DetailsCard>
+      <Toaster position="top-right" />
     </DetailsContainer>
   );
 }

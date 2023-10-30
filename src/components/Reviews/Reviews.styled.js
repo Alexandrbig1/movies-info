@@ -1,11 +1,19 @@
 import styled from "styled-components";
+import { TfiCommentAlt } from "react-icons/tfi";
 
-export const ReviewsText = styled.p`
-  color: #050505;
-  font-family: Arial, Helvetica, sans-serif;
+export const ReviewsIcon = styled(TfiCommentAlt)`
   font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1.5;
+`;
+
+export const ReviewsAuthor = styled.span`
+  color: ${(p) => p.theme.colors.darkBgColor};
+  font-size: 1.6rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 `;
 
 export const ReviewsMenu = styled.ul`
@@ -16,13 +24,15 @@ export const ReviewsMenu = styled.ul`
 `;
 export const ReviewsItems = styled.li`
   display: flex;
+  flex-direction: column;
+  border-radius: 1.2rem;
+  padding: 1.2rem;
+  gap: 1.2rem;
 
   &:nth-child(even) {
-    background-color: ${(p) => p.theme.colors.btnBgColor};
     background-color: #dee2e6;
   }
   &:nth-child(odd) {
-    background-color: ${(p) => p.theme.colors.btnBgColor};
     background-color: #ced4da;
   }
 `;

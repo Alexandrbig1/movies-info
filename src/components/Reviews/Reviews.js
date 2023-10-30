@@ -1,7 +1,14 @@
-import { ReviewsMenu, ReviewsItems } from "./Reviews.styled";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { apiMoviesReviews } from "../api";
+import ReviewsText from "./ReviewText";
+import toast, { Toaster } from "react-hot-toast";
+import {
+  ReviewsMenu,
+  ReviewsItems,
+  ReviewsAuthor,
+  ReviewsIcon,
+} from "./Reviews.styled";
 
 export default function Reviews() {
   const { movieId } = useParams();
@@ -10,26 +17,33 @@ export default function Reviews() {
 
   useEffect(() => {
     async function getMoviesCast() {
-      const movie = await apiMoviesReviews(movieId);
-      console.log(movie);
-      setReviews(movie);
+      try {
+        const movie = await apiMoviesReviews(movieId);
+        setReviews(movie.results);
+      } catch (error) {
+        toast.error("Oops, something went wrong! Reload this page!");
+      }
     }
     getMoviesCast();
   }, [setReviews, movieId]);
 
   return (
     <ReviewsMenu>
-      {reviews.results && reviews.results.length === 0 ? (
+      {reviews && reviews.length === 0 ? (
         <ReviewsItems>We don't have any reviews for this movie.</ReviewsItems>
       ) : (
-        reviews.results &&
-        reviews.results.map(({ id, author, content }) => (
+        reviews &&
+        reviews.map(({ id, author, content }) => (
           <ReviewsItems key={id}>
-            <span>{author}</span>
-            <p>{content}</p>
+            <ReviewsAuthor>
+              <ReviewsIcon />
+              {author}
+            </ReviewsAuthor>
+            <ReviewsText>{content}</ReviewsText>
           </ReviewsItems>
         ))
       )}
+      <Toaster position="top-right" />
     </ReviewsMenu>
   );
 }

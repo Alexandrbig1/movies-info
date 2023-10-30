@@ -1,4 +1,7 @@
 import { apiMoviesCast } from "../api";
+import { useEffect, useState } from "react";
+import { useLocation, useParams } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
 import {
   CastText,
   CastMenu,
@@ -6,9 +9,8 @@ import {
   CastImage,
   CastTextWrapper,
   CastChar,
+  CastCharAs,
 } from "./Cast.styled";
-import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
 
 export default function Cast() {
   const { movieId } = useParams();
@@ -17,32 +19,39 @@ export default function Cast() {
 
   useEffect(() => {
     async function getMoviesCast() {
-      const movie = await apiMoviesCast(movieId);
-      setCast(movie);
+      try {
+        const movie = await apiMoviesCast(movieId);
+        setCast(movie.cast);
+      } catch (error) {
+        toast.error("Oops, something went wrong! Reload this page!");
+      }
     }
     getMoviesCast();
   }, [setCast, movieId]);
 
   return (
     <CastMenu>
-      {cast.cast &&
-        cast.cast.map((item) => (
-          <CastItems key={item.cast_id}>
+      {cast &&
+        cast.map(({ cast_id, profile_path, title, name, character }) => (
+          <CastItems key={cast_id}>
             <CastImage
               src={
-                item.profile_path
+                profile_path
                   ? `
-http://image.tmdb.org/t/p/w200${item.profile_path}`
-                  : "images/noImage.webp"
+http://image.tmdb.org/t/p/w200${profile_path}`
+                  : `${process.env.PUBLIC_URL}/images/noProfile.jpg`
               }
-              alt={item.title}
+              alt={title}
             />
             <CastTextWrapper>
-              <CastText>{item.name}</CastText>
-              <CastChar>{item.character}</CastChar>
+              <CastText>{name}</CastText>
+              <CastChar>
+                <CastCharAs>as</CastCharAs> {character}
+              </CastChar>
             </CastTextWrapper>
           </CastItems>
         ))}
+      <Toaster position="top-right" />
     </CastMenu>
   );
 }

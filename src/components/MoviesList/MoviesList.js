@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-// import getApi from "../api";
+import { Link, useLocation } from "react-router-dom";
 import {
   MoviesItems,
   MoviesMenu,
@@ -12,8 +10,6 @@ import {
   RatingIcon,
   RatingWrapper,
 } from "./MoviesList.styled.js";
-import { Link, useLocation } from "react-router-dom";
-// import { apiMoviesById } from "../api";
 
 export default function MoviesList({ movies }) {
   const location = useLocation();
@@ -28,29 +24,27 @@ export default function MoviesList({ movies }) {
 
   return (
     <MoviesMenu>
-      {movies.map((item) => (
-        <MoviesItems key={item.id}>
-          <Link to={`/movies/${item.id}`} state={{ from: location }}>
+      {movies.map(({ id, vote_average, title, poster_path }) => (
+        <MoviesItems key={id}>
+          <Link to={`/movies/${id}`} state={{ from: location }}>
             <MoviesWrap>
               <MoviesTextWrap>
                 <RatingWrapper>
-                  <RatingIcon
-                    value={formatNumber(item.vote_average.toFixed(1))}
-                  />
-                  <Rating value={formatNumber(item.vote_average.toFixed(1))}>
-                    {formatNumber(item.vote_average.toFixed(1))}
+                  <RatingIcon value={formatNumber(vote_average.toFixed(1))} />
+                  <Rating value={formatNumber(vote_average.toFixed(1))}>
+                    {formatNumber(vote_average.toFixed(1))}
                   </Rating>
                 </RatingWrapper>
-                <MoviesTextTitle>{item.title}</MoviesTextTitle>
+                <MoviesTextTitle>{title}</MoviesTextTitle>
               </MoviesTextWrap>
               <MoviesImg
                 src={
-                  item.poster_path
+                  poster_path
                     ? `
-http://image.tmdb.org/t/p/w200${item.poster_path}`
+http://image.tmdb.org/t/p/w200${poster_path}`
                     : "images/noImage.webp"
                 }
-                alt={item.title}
+                alt={title}
               />
             </MoviesWrap>
           </Link>

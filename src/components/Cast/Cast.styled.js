@@ -20,18 +20,16 @@ export const CastItems = styled.li`
   display: flex;
 
   &:nth-child(even) {
-    background-color: ${(p) => p.theme.colors.btnBgColor};
     background-color: #dee2e6;
   }
   &:nth-child(odd) {
-    background-color: ${(p) => p.theme.colors.btnBgColor};
     background-color: #ced4da;
   }
 `;
 
 export const CastImage = styled.img`
-  width: 4rem;
-  height: auto;
+  width: 4.2rem;
+  height: 6.3rem;
 `;
 
 export const CastTextWrapper = styled.div`
@@ -48,5 +46,12 @@ export const CastChar = styled.span`
   color: #050505;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
+  font-weight: 400;
+`;
+
+export const CastCharAs = styled.span`
+  color: rgba(5, 5, 5, 0.5);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
   font-weight: 400;
 `;

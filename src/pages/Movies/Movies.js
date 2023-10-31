@@ -6,22 +6,29 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import toast, { Toaster } from "react-hot-toast";
 import Button from "../../components/ButtonLoadMore/Button";
 import Loader from "../../components/Loader/Loader";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+
   const query = searchParams.get("query") ?? "";
+
+  // console.log(query);
 
   async function getSearchMovies(e) {
     e.preventDefault();
+    const queryEl = e.target.search.value;
 
-    const query = e.target.search.value;
-    setSearch(query);
+    const searchedMovie = queryEl !== "" ? { query: queryEl } : {};
+    setSearchParams(searchedMovie);
+
+    // setSearch(queryEl);
+
     setPage(1);
     setMovies([]);
   }
@@ -31,7 +38,7 @@ export default function Movies() {
   }
 
   useEffect(() => {
-    if (search === "") {
+    if (query === "") {
       return;
     }
 
@@ -39,7 +46,7 @@ export default function Movies() {
       try {
         setLoading(true);
         setError(false);
-        const data = await apiSearchMovies(search, page);
+        const data = await apiSearchMovies(query, page);
 
         setMovies((movies) => [...movies, ...data.results]);
 
@@ -53,18 +60,18 @@ export default function Movies() {
       }
     }
     searchMovie();
-  }, [search, page]);
+  }, [page, query]);
 
-  function updateQueryString(query) {
-    const searchedMovie = query !== "" ? { query } : {};
-    setSearchParams(searchedMovie);
-  }
+  // function updateQueryString(query) {
+  //   const searchedMovie = query !== "" ? { query } : {};
+  //   setSearchParams(searchedMovie);
+  // }
 
   return (
     <Container>
       <SearchBar
         value={query}
-        onChange={updateQueryString}
+        // onChange={updateQueryString}
         onSearch={getSearchMovies}
       />
       {movies.length > 0 && (

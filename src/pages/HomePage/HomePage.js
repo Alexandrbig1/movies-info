@@ -12,6 +12,10 @@ export default function HomePage() {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
+    if (trending.length > 0) {
+      return;
+    }
+
     async function api() {
       try {
         const data = await getApi();
@@ -21,7 +25,7 @@ export default function HomePage() {
       }
     }
     api();
-  }, []);
+  }, [trending]);
 
   return (
     <Container>

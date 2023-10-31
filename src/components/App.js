@@ -14,13 +14,18 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<Details />}>
-          <Route path="/movies/:movieId/cast" element={<Cast />} />
-          <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+        <Route path="movies" element={<Movies />} />
+        <Route path="movies/:movieId" element={<Details />}>
+          <Route path="cast" element={<Cast />} />
+          <Route path="reviews" element={<Reviews />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
 }
+
+{
+  /* <Route path="movies/:movieId/cast" element={<Cast />} /> */
+}
+// <Route path="movies/:movieId/reviews" element={<Reviews />} />

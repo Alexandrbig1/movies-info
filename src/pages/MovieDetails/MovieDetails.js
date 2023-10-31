@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation, useParams, Outlet } from "react-router-dom";
 import { apiMoviesById } from "../../components/api";
 import StarRating from "../../components/StarRating/StarRating";
@@ -27,7 +27,7 @@ export default function Details() {
   const { movieId } = useParams();
   const location = useLocation();
   const [movies, setMovies] = useState([]);
-  const backLinkHref = location.state?.from ?? "/movies";
+  const backLinkLocationRef = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
     async function getMoviesById() {
@@ -39,6 +39,10 @@ export default function Details() {
       }
     }
     getMoviesById();
+
+    return () => {
+      setMovies([]);
+    };
   }, [movieId, setMovies]);
 
   function formatNumber(number) {
@@ -64,7 +68,7 @@ export default function Details() {
         <>
           <BackLinkWrapper>
             <BackArrow />
-            <BackLink to={backLinkHref}>Back to movies</BackLink>
+            <BackLink to={backLinkLocationRef.current}>Back to movies</BackLink>
           </BackLinkWrapper>
           <Img
             src={

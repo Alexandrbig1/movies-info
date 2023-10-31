@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useLocation, useParams, Outlet } from "react-router-dom";
 import { apiMoviesById } from "../../components/api";
 import StarRating from "../../components/StarRating/StarRating";
 import { toast } from "react-toastify";
-
 import {
   DetailsContainer,
   DetailsCard,
@@ -136,7 +135,9 @@ http://image.tmdb.org/t/p/w200${poster_path}`
               </CastLink>
             </CastItems>
           </CastMenu>
-          <Outlet />
+          <Suspense>
+            <Outlet />
+          </Suspense>
         </DetailsTextWrapper>
       </DetailsCard>
     </DetailsContainer>

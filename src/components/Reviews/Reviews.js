@@ -14,12 +14,16 @@ import {
 export default function Reviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
+  const [reviewsTrue, setReviewsTrue] = useState(false);
 
   useEffect(() => {
     async function getMoviesCast() {
       try {
         const movie = await apiMoviesReviews(movieId);
         setReviews(movie.results);
+        if (movie.results.length === 0) {
+          setReviewsTrue(true);
+        }
       } catch (error) {
         toast.error("Oops, something went wrong! Reload this page!", {
           position: "top-right",
@@ -36,10 +40,7 @@ export default function Reviews() {
 
   return (
     <ReviewsMenu>
-      {reviews && reviews.length === 0 ? (
-        <ReviewsItems>We don't have any reviews for this movie.</ReviewsItems>
-      ) : (
-        reviews &&
+      {reviews &&
         reviews.map(({ id, author, content }) => (
           <ReviewsItems key={id}>
             <ReviewsAuthor>
@@ -48,7 +49,9 @@ export default function Reviews() {
             </ReviewsAuthor>
             <ReviewsText>{content}</ReviewsText>
           </ReviewsItems>
-        ))
+        ))}
+      {reviewsTrue && (
+        <ReviewsItems>We don't have any reviews for this movie.</ReviewsItems>
       )}
     </ReviewsMenu>
   );

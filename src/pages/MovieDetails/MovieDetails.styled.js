@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { BsArrowLeft, BsArrowDownShort } from "react-icons/bs";
+import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 export const DetailsContainer = styled.div`
   width: 100%;
@@ -143,7 +143,7 @@ export const BackArrow = styled(BsArrowLeft)`
   color: ${(p) => p.theme.colors.darkBgColor};
 `;
 
-export const CastIcon = styled(BsArrowDownShort)`
+export const CastIcon = styled(BsArrowRight)`
   font-size: 1.6rem;
   transition: 0.3s;
 `;
@@ -163,12 +163,13 @@ export const CastLink = styled(Link)`
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 0.2rem;
-  width: 9rem;
+  gap: 0.6rem;
+  width: 10rem;
 
   &:hover {
     & > ${CastIcon} {
       color: ${(p) => p.theme.colors.accent};
+      margin-left: 0.8rem;
     }
   }
 `;

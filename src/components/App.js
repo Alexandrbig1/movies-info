@@ -24,8 +24,3 @@ export default function App() {
     </Routes>
   );
 }
-
-{
-  /* <Route path="movies/:movieId/cast" element={<Cast />} /> */
-}
-// <Route path="movies/:movieId/reviews" element={<Reviews />} />

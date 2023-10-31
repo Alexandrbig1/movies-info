@@ -1,6 +1,9 @@
 import { Outlet } from "react-router-dom";
 import { Suspense } from "react";
 import Loader from "./Loader/Loader";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import {
   Nav,
   Header,
@@ -31,6 +34,18 @@ export default function Layout() {
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable={false}
+          pauseOnHover={false}
+          theme="light"
+        />
       </main>
     </>
   );

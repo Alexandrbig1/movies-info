@@ -44,7 +44,6 @@ export const MoviesTextWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  /* align-items: center; */
   justify-content: start;
 `;
 
@@ -60,11 +59,9 @@ export const MoviesTextTitle = styled.span`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  /* border-bottom: 1px solid transparent; */
 
   &:hover {
     text-decoration: underline;
-    /* border-bottom: 1px solid #050505; */
   }
 
   @media (max-width: 520px) {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import MoviesList from "../../components/MoviesList/MoviesList";
 import getApi from "../../components/api";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
 import {
   MoviesContainer,
   MoviesTitle,
@@ -21,7 +21,14 @@ export default function HomePage() {
         const data = await getApi();
         setTrending(data.results);
       } catch (error) {
-        toast.error("Oops, something went wrong! Reload this page!");
+        toast.error("Oops, something went wrong! Reload this page!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     api();
@@ -33,7 +40,6 @@ export default function HomePage() {
         <MoviesTitle>Trending Today</MoviesTitle>
         <MoviesList movies={trending} />
       </MoviesContainer>
-      <Toaster position="top-right" />
     </Container>
   );
 }

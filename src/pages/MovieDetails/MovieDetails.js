@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation, useParams, Outlet } from "react-router-dom";
 import { apiMoviesById } from "../../components/api";
 import StarRating from "../../components/StarRating/StarRating";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
+
 import {
   DetailsContainer,
   DetailsCard,
@@ -30,20 +31,26 @@ export default function Details() {
   const backLinkLocationRef = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
+    if (!movieId) {
+      return;
+    }
     async function getMoviesById() {
       try {
         const movie = await apiMoviesById(movieId);
         setMovies(movie);
       } catch (error) {
-        toast.error("Oops, something went wrong! Reload this page!");
+        toast.error("Oops, something went wrong! Reload this page!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     getMoviesById();
-
-    return () => {
-      setMovies([]);
-    };
-  }, [movieId, setMovies]);
+  }, [movieId]);
 
   function formatNumber(number) {
     if (number % 1 === 0) {
@@ -132,7 +139,6 @@ http://image.tmdb.org/t/p/w200${poster_path}`
           <Outlet />
         </DetailsTextWrapper>
       </DetailsCard>
-      <Toaster position="top-right" />
     </DetailsContainer>
   );
 }

@@ -1,7 +1,8 @@
 import { apiMoviesCast } from "../api";
 import { useEffect, useState } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
+
 import {
   CastText,
   CastMenu,
@@ -23,7 +24,14 @@ export default function Cast() {
         const movie = await apiMoviesCast(movieId);
         setCast(movie.cast);
       } catch (error) {
-        toast.error("Oops, something went wrong! Reload this page!");
+        toast.error("Oops, something went wrong! Reload this page!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     getMoviesCast();
@@ -51,7 +59,6 @@ http://image.tmdb.org/t/p/w200${profile_path}`
             </CastTextWrapper>
           </CastItems>
         ))}
-      <Toaster position="top-right" />
     </CastMenu>
   );
 }

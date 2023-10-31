@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { apiMoviesReviews } from "../api";
 import ReviewsText from "./ReviewText";
-import toast, { Toaster } from "react-hot-toast";
+import { toast } from "react-toastify";
+
 import {
   ReviewsMenu,
   ReviewsItems,
@@ -12,7 +13,6 @@ import {
 
 export default function Reviews() {
   const { movieId } = useParams();
-  const location = useLocation();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -21,7 +21,14 @@ export default function Reviews() {
         const movie = await apiMoviesReviews(movieId);
         setReviews(movie.results);
       } catch (error) {
-        toast.error("Oops, something went wrong! Reload this page!");
+        toast.error("Oops, something went wrong! Reload this page!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     }
     getMoviesCast();
@@ -43,7 +50,6 @@ export default function Reviews() {
           </ReviewsItems>
         ))
       )}
-      <Toaster position="top-right" />
     </ReviewsMenu>
   );
 }

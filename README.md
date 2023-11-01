@@ -1,18 +1,40 @@
-# **Movies Search** themoviedb.org API
+# **React Movie Info App** themoviedb.org API
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
-My first React project - getting trending movies and movies info from api
+## Project Overview:
+My first React project - getting trending movies and movies info from api.
+The React Movie Info App is a web application designed to provide users with comprehensive movie information sourced from an external API. The primary goal of this project is to create a user-friendly interface for searching and exploring movie details, including cast, and reviews.
 
 ## Project Specifications:
-
-* By axios getting api from themoviedb.org;
-* Follow up best 20 trending movies nowadays;
-* You can search any movie that you want to get info about it;
-* You can check all casts that was in movie;
-* As well you can check all the reviews lefting about movie;
-* All the movies you can share with anyone by links, everything will be saved because of React location, params and refs
+1. **Trending Movies:** Users can follow up best 20 trending movies nowadays.
+1. **Movie Search:** Users can search for movies by title, allowing for easy discovery of films they are interested in.
+1. **Movie Details:** The app provides detailed information about each movie, including its title, release year, genre, and an average score.
+1. **Cast:** Users can explore the actors involved in the making of each movie.
+1. **Reviews:** Users can check all the reviews lefting about movies.
 
 In this project was used React (params/location/refs/routes/route/hashroute/sharedlayout/states/hooks/API/props/libraries/modernNormalize/styledComponents/ReactLoaderSpinner/axios/ReactHotToast/ReactToastife/ReactIcons etc...)
+
+## Technology Stack:
+* **Front-End Framework:** React
+* **API Integration:** Utilizes a movie information API for data retrieval.
+* **Styling:** by Styled Component.
+
+## Project Purpose:
+The project serves both as a showcase of React development skills and as a practical tool for movie enthusiasts to quickly access movie-related information in one place.
+
+## Challenges Faced:
+* Implementing API integration to fetch movie data in real-time by axios.
+* Designing an intuitive and visually appealing user interface.
+* Handling error responses from the API gracefully to ensure a seamless user experience.
+
+## Learning Outcomes:
+Through this project, I gained valuable experience in React, state management, API integration, and user interface design. It also reinforced my problem-solving skills and the importance of handling data asynchronously in web applications.
+
+## Future Enhancements:
+While the current version of the app provides essential movie information, future enhancements could include user accounts, the ability to save favorite movies.
+
+## Feedback:
+I welcome feedback and suggestions from users to improve the application's functionality and user experience.
 
 ## Languages and Tools:
 <div align="center">  

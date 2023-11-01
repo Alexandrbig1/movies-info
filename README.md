@@ -1,4 +1,4 @@
-# **React Movie Info App** themoviedb.org API
+# **React Movie Info App**
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 ## Project Overview:
@@ -35,6 +35,8 @@ While the current version of the app provides essential movie information, futur
 
 ## Feedback:
 I welcome feedback and suggestions from users to improve the application's functionality and user experience.
+
+## Thanks to **themoviedb.org** API for making this project possible!
 
 ## Languages and Tools:
 <div align="center">  

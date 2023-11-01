@@ -3,7 +3,6 @@ import SearchBar from "../../components/SearchBar/SearchBar";
 import { useEffect, useState } from "react";
 import { apiSearchMovies } from "../../components/api";
 import MoviesList from "../../components/MoviesList/MoviesList";
-// import toast, { Toaster } from "react-hot-toast";
 import Button from "../../components/ButtonLoadMore/Button";
 import Loader from "../../components/Loader/Loader";
 import { useSearchParams } from "react-router-dom";
@@ -26,7 +25,6 @@ export default function Movies() {
     const queryEl = e.target.search.value;
 
     if (queryEl === "") {
-      // toast.success("Enter your request, please!");
       toast.info("Enter your request, please!", {
         position: "top-right",
         autoClose: 5000,
@@ -38,7 +36,6 @@ export default function Movies() {
       return;
     }
     if (queryEl === query) {
-      // toast.success("Enter new request, please!");
       toast.info("Enter new request, please!", {
         position: "top-right",
         autoClose: 5000,
@@ -126,7 +123,6 @@ export default function Movies() {
         }
       } catch (error) {
         setError(true);
-        // toast.error("Oops, something went wrong! Reload this page!");
         toast.error("Oops, something went wrong! Reload this page!", {
           position: "top-right",
           autoClose: 5000,

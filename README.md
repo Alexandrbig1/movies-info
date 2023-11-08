@@ -12,12 +12,19 @@ The React Movie Info App is a web application designed to provide users with com
 1. **Cast:** Users can explore the actors involved in the making of each movie.
 1. **Reviews:** Users can check all the reviews lefting about movies.
 
-In this project was used React (params/location/refs/routes/route/hashroute/sharedlayout/states/hooks/API/props/libraries/modernNormalize/styledComponents/ReactLoaderSpinner/axios/ReactHotToast/ReactToastife/ReactIcons etc...)
+## Key Features and Technologies Used:
 
-## Technology Stack:
 * **Front-End Framework:** React
 * **API Integration:** Utilizes a movie information API for data retrieval.
 * **Styling:** by Styled Component.
+* **React Router:** The heart of the application, enabling seamless navigation and dynamic routing.
+* **HashRouter with Routes and Route:** Employed to create a smooth and intuitive user experience.
+* **Link and NavLink Components:** Used for easy navigation and active link styling.
+* **URL Parameters:** Leveraged to access specific movie details and provide a tailored user experience.
+* **Nested Routes:** Implemented with SharedLayout and Outlet for organized content display.
+* **useNavigate Hook:** Enhanced navigation control for an engaging user experience.
+* **useSearchParams:** Enables dynamic searching and filtering of movie information.
+* **React.lazy and React Suspense:** Utilized for code splitting, ensuring efficient loading of app components.
 
 ## Project Purpose:
 The project serves both as a showcase of React development skills and as a practical tool for movie enthusiasts to quickly access movie-related information in one place.

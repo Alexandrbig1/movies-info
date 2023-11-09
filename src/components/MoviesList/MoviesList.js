@@ -42,7 +42,7 @@ export default function MoviesList({ movies }) {
                   poster_path
                     ? `
 http://image.tmdb.org/t/p/w200${poster_path}`
-                    : "images/noImage.webp"
+                    : `${process.env.PUBLIC_URL}/images/noImage.webp`
                 }
                 alt={title}
               />

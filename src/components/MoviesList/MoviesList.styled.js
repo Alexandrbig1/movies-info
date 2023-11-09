@@ -49,7 +49,7 @@ export const MoviesTextWrap = styled.div`
 
 export const MoviesTextTitle = styled.span`
   color: ${(p) => p.theme.colors.lightTextColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
@@ -78,7 +78,7 @@ export const Rating = styled.span`
   color: ${(p) =>
     p.value !== 0 ? p.theme.colors.white : p.theme.colors.btnBgColor};
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 500;
   line-height: 1.25;
 `;

@@ -19,7 +19,7 @@ export const Nav = styled.nav`
 
 export const Link = styled(NavLink)`
   color: ${(p) => p.theme.colors.lightTextColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
   line-height: normal;
@@ -53,7 +53,7 @@ export const LogoLink = styled(NavLink)`
 
 export const LogoText = styled.span`
   color: ${(p) => p.theme.colors.lightTextColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 300;

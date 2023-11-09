@@ -51,7 +51,7 @@ export const Img = styled.img`
 
 export const DetailsTitle = styled.h2`
   color: ${(p) => p.theme.colors.darkBgColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 3.6rem;
   font-weight: 600;
   line-height: 1.2;
@@ -64,7 +64,7 @@ export const DetailsTitle = styled.h2`
 
 export const DetailsGenre = styled.span`
   color: #050505;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;
@@ -82,7 +82,7 @@ export const Genre = styled.span`
   color: rgba(5, 5, 5, 0.7);
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
@@ -91,7 +91,7 @@ export const Genre = styled.span`
 
 export const MovieDetailsText = styled.p`
   color: ${(p) => p.theme.colors.darkBgColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 400;
@@ -107,7 +107,7 @@ export const DetailsRating = styled.span`
   color: ${(p) =>
     p.value !== 0 ? p.theme.colors.darkBgColor : p.theme.colors.btnBgColor};
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   line-height: 1.25;
 `;
@@ -132,7 +132,7 @@ export const BackLinkWrapper = styled.button`
 
 export const BackLink = styled(Link)`
   color: ${(p) => p.theme.colors.moviesWrapDarkColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.25;
@@ -155,7 +155,7 @@ export const CastLink = styled(Link)`
   transition: 0.4s ease-in-out;
 
   color: #050505;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   font-weight: 600;

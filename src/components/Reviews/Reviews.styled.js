@@ -8,7 +8,7 @@ export const ReviewsIcon = styled(TfiCommentAlt)`
 export const ReviewsAuthor = styled.span`
   color: ${(p) => p.theme.colors.darkBgColor};
   font-size: 1.6rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 600;
   line-height: 1.25;
   display: flex;

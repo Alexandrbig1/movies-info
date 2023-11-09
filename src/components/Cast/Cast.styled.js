@@ -4,7 +4,7 @@ export const CastWrapper = styled.div``;
 
 export const CastText = styled.span`
   color: #050505;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
 `;
@@ -44,14 +44,14 @@ export const CastTextWrapper = styled.div`
 
 export const CastChar = styled.span`
   color: #050505;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.6rem;
   font-weight: 400;
 `;
 
 export const CastCharAs = styled.span`
   color: rgba(5, 5, 5, 0.5);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
 `;

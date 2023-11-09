@@ -23,7 +23,7 @@ export const MoviesContainer = styled.div`
 
 export const MoviesTitle = styled.h2`
   color: ${(p) => p.theme.colors.darkBgColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;

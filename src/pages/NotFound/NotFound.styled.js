@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PageNotFound = styled.h2`
   color: ${(p) => p.theme.colors.lightTextColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-style: normal;
   font-weight: 600;

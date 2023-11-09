@@ -30,7 +30,7 @@ export const SearchInput = styled.input`
   }
 
   &::placeholder {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 1.4rem;
     font-weight: 300;
     line-height: normal;
@@ -57,7 +57,7 @@ export const SearchButton = styled.button`
   cursor: pointer;
   background-color: ${(p) => p.theme.colors.btnBgColor};
   color: ${(p) => p.theme.colors.darkBgColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.8rem;
   font-weight: 500;
   line-height: normal;

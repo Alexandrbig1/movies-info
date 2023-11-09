@@ -2,7 +2,6 @@ import { createGlobalStyle } from "styled-components";
 import "modern-normalize";
 
 export const GlobalStyle = createGlobalStyle`
-
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +11,10 @@ export const GlobalStyle = createGlobalStyle`
 html {
 font-size: 62.5%;
   overflow-x: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
 

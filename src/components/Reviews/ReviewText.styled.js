@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ReviewText = styled.p`
   color: rgba(5, 5, 5, 0.8);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.4rem;
   font-weight: 400;
   line-height: 1.5;

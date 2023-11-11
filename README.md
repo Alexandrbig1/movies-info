@@ -17,9 +17,10 @@ The React Movie Info App is a web application designed to provide users with com
 
 ## Key Features and Technologies Used:
 
-- **Front-End Framework:** React
+- **Front-End Framework:** ![Alt text](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+- **Styling:** ![Alt text](https://img.shields.io/badge/styledcomponents-DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
 - **API Integration:** Utilizes a movie information API for data retrieval.
-- **Styling:** by Styled Component.
+- ![Alt text](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) for making API requests
 - **React Router:** The heart of the application, enabling seamless navigation and dynamic routing.
 - **HashRouter with Routes and Route:** Employed to create a smooth and intuitive user experience.
 - **Link and NavLink Components:** Used for easy navigation and active link styling.

@@ -2,6 +2,9 @@
 
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
+[![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/movies-info)](https://github.com/Alexandrbig1/movies-info/commits/main)
+[![GitHub license](https://img.shields.io/github/license/Alexandrbig1/movies-info)](https://github.com/Alexandrbig1/movies-info/blob/main/LICENSE)
+
 ## Project Overview:
 
 My first React project - getting trending movies and movies info from api.
@@ -57,6 +60,14 @@ Through this project, I gained valuable experience in React, state management, A
 ## Future Enhancements:
 
 While the current version of the app provides essential movie information, future enhancements could include user accounts, the ability to save favorite movies.
+
+## Issues
+
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/movies-info/issues).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ## Feedback:
 

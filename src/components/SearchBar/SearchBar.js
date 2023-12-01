@@ -13,7 +13,6 @@ export default function SearchBar({ onSearch, value }) {
         <SearchInput
           name="search"
           defaultValue={value}
-          // onChange={(e) => onChange(e.target.value)}
           type="text"
           placeholder="Search Movie"
         />

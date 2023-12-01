@@ -28,14 +28,3 @@ root.render(
     </HashRouter>
   </React.StrictMode>
 );
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(
-//   <React.StrictMode>
-//     <BrowserRouter basename="/goit-react-hw-05-movies">
-//       <ThemeProvider theme={theme}>
-//         <App />
-//         <GlobalStyle />
-//       </ThemeProvider>
-//     </BrowserRouter>
-//   </React.StrictMode>
-// );

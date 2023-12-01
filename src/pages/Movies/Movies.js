@@ -11,7 +11,6 @@ import { toast } from "react-toastify";
 export default function Movies() {
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
-  // const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,7 +49,6 @@ export default function Movies() {
     const searchedMovie = queryEl !== "" ? { query: queryEl } : {};
     setSearchParams(searchedMovie);
 
-    // setSearch(queryEl);
     setPage(1);
     setMovies([]);
   }
@@ -138,18 +136,9 @@ export default function Movies() {
     searchMovie();
   }, [query, page]);
 
-  // function updateQueryString(query) {
-  //   const searchedMovie = query !== "" ? { query } : {};
-  //   setSearchParams(searchedMovie);
-  // }
-
   return (
     <Container>
-      <SearchBar
-        value={query}
-        // onChange={updateQueryString}
-        onSearch={getSearchMovies}
-      />
+      <SearchBar value={query} onSearch={getSearchMovies} />
       {movies.length > 0 && (
         <MoviesContainer>
           <MoviesList movies={movies} />

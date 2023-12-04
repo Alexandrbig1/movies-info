@@ -1,6 +1,8 @@
 {
   "name": "react-movies-info-app",
   "homepage": "https://alexandrbig1.github.io/movies-info",
+  "author": "Alex Smagin",
+  "license": "MIT",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

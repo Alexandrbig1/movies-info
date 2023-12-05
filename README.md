@@ -61,6 +61,31 @@ Through this project, I gained valuable experience in React, state management, A
 
 While the current version of the app provides essential movie information, future enhancements could include user accounts, the ability to save favorite movies.
 
+## Contributing
+
+If you're interested in contributing to the React Movie Info App, follow these steps:
+
+1. Fork the repository.
+2. Clone your forked repository to your local machine.
+   ```bash
+   git clone https://github.com/your-username/movies-info.git
+3. Create a new branch for your feature or bug fix.
+   ```bash
+   git checkout -b feature/your-feature-name
+4. Make your changes and commit them with a descriptive commit message.
+   ```bash
+   git add .
+   git commit -m "Add your descriptive commit message here"
+5. Push your changes to your forked repository.
+   ```bash
+   git push origin feature/your-feature-name
+6. Open a pull request (PR) from your forked repository to the main repository's main branch.
+
+## Contribution Guidelines
+- Ensure your code follows the existing coding style.
+- Include clear and concise documentation for any new features.
+- Test your changes thoroughly before creating a pull request.
+
 ## Issues
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/movies-info/issues).

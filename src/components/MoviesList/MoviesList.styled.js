@@ -13,11 +13,10 @@ export const MoviesMenu = styled.ul`
 export const MoviesItems = styled.li`
   border-radius: 0.4rem;
   overflow: hidden;
-
   @media (max-width: 520px) {
     display: block;
     width: 40rem;
-    height: 60rem;
+    height: auto;
   }
 `;
 
@@ -30,7 +29,7 @@ export const MoviesWrap = styled.div`
   justify-content: space-between;
   overflow: hidden;
   width: 20rem;
-  height: 36rem;
+  height: 40rem;
 
   @media (max-width: 520px) {
     display: block;
@@ -40,7 +39,7 @@ export const MoviesWrap = styled.div`
 `;
 
 export const MoviesTextWrap = styled.div`
-  padding: 2.4rem;
+  padding: 2.4rem 2.4rem 0 2.4rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -50,15 +49,16 @@ export const MoviesTextWrap = styled.div`
 export const MoviesTextTitle = styled.span`
   color: ${(p) => p.theme.colors.lightTextColor};
   font-family: "Roboto", sans-serif;
+  height: 40px;
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 1.16;
   text-overflow: ellipsis;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  padding-bottom: 4.5rem;
 
   &:hover {
     text-decoration: underline;
@@ -66,6 +66,8 @@ export const MoviesTextTitle = styled.span`
 
   @media (max-width: 520px) {
     font-size: 2.4rem;
+    height: auto;
+    padding-bottom: 2rem;
   }
 `;
 

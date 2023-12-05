@@ -57,4 +57,10 @@ a {
   text-decoration: none;
   color: inherit;
 }
+@media (max-width: 768px){
+  img {
+    max-height: 80%;
+    margin: auto;
+  }
+}
 `;

@@ -4,6 +4,11 @@
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/movies-info)](https://github.com/Alexandrbig1/movies-info/commits/main)
 [![GitHub license](https://img.shields.io/github/license/Alexandrbig1/movies-info)](https://github.com/Alexandrbig1/movies-info/blob/main/LICENSE)
+[![React](https://img.shields.io/badge/React-18.0.0-blue.svg)](https://reactjs.org/)
+[![Axios](https://img.shields.io/badge/Axios-1.6.0-green.svg)](https://github.com/axios/axios)
+[![Styled Components](https://img.shields.io/badge/Styled_Components-6.1.0-orange.svg)](https://styled-components.com/)
+[![React Icons](https://img.shields.io/badge/React_Icons-4.11.0-blueviolet.svg)](https://react-icons.github.io/react-icons/)
+
 
 ## Project Overview
 

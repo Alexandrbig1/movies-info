@@ -39,7 +39,7 @@ export const MoviesWrap = styled.div`
 `;
 
 export const MoviesTextWrap = styled.div`
-  padding: 2.4rem 2.4rem 0 2.4rem;
+  padding: 2.4rem 2.4rem 0.8rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;

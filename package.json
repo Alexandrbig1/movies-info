@@ -3,6 +3,15 @@
   "homepage": "https://alexandrbig1.github.io/movies-info",
   "author": "Alex Smagin",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "styled-components",
+    "trending movies",
+    "axios",
+    "react-icons",
+    "movies",
+    "movie search"
+  ],
   "version": "0.1.0",
   "private": true,
   "dependencies": {
